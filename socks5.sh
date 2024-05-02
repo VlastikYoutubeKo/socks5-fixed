@@ -11,12 +11,13 @@ sudo apt update -y
 # Install dante-server
 sudo apt install dante-server -y
 
-# Create the configuration file
+# Create the configuration file (For the proxy to be not considered public, I have added socksmethod: username, since it was in a guide on web and it works :o)
 sudo bash -c 'cat <<EOF > /etc/danted.conf
 logoutput: /var/log/danted.log
 internal: 0.0.0.0 port = 1080
 external: eth0
-method: username none
+socksmethod: username
+clientmethod: none
 user.privileged: root
 user.notprivileged: nobody
 client pass {
