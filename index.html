@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SOCKS5 Proxy Setup Script for Ubuntu</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  body {
+    font-family: 'Roboto', sans-serif;
+  }
+</style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+<div class="max-w-5xl mx-auto px-4 py-8">
+  <h1 class="text-3xl font-bold text-center mb-6">SOCKS5 Proxy Setup Script for Ubuntu</h1>
+
+  <div class="bg-white shadow-md rounded-lg p-6">
+    <p>This repository contains a script that helps you to setup a SOCKS5 proxy server on an Ubuntu system. The server uses <code class="bg-gray-200 rounded px-1">dante-server</code> and supports username/password authentication.</p>
+
+    <h2 class="text-2xl font-semibold mt-4 mb-2">Prerequisites</h2>
+    <ul class="list-disc pl-5">
+      <li>Ubuntu system (This script was tested on Ubuntu 20.04, but should work with other versions as well).</li>
+      <li>User with <code class="bg-gray-200 rounded px-1">sudo</code> privileges.</li>
+    </ul>
+
+    <h2 class="text-2xl font-semibold mt-4 mb-2">Installation</h2>
+    <p>Run the script</p>
+    <pre class="bg-gray-100 rounded p-3"><code>wget https://raw.githubusercontent.com/VlastikYoutubeKo/socks5-fixed/main/socks5.sh
+sudo bash socks5.sh
+</code></pre>
+
+    <p>You'll be prompted for a username and password. These will be the credentials for the SOCKS5 proxy.</p>
+
+    <h2 class="text-2xl font-semibold mt-4 mb-2">Testing the Proxy</h2>
+    <p>The proxy can be tested from a Windows machine using <code class="bg-gray-200 rounded px-1">curl</code>. If you don't have curl installed, it can be installed with the following command:</p>
+    <pre class="bg-gray-100 rounded p-3"><code>apt-get install curl
+</code></pre>
+
+    <p>You can then test the proxy with:</p>
+    <pre class="bg-gray-100 rounded p-3"><code>curl -x socks5://username:password@proxy_server_ip:1080 https://ifconfig.me
+</code></pre>
+  </div>
+
+  <div class="text-center mt-6">
+    <p>Original script by <a href="https://github.com/saaiful/socks5" class="text-blue-500 hover:text-blue-700">saaiful</a></p>
+  </div>
+</div>
+
+</body>
+</html>
